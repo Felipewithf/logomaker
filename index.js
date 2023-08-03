@@ -1,6 +1,6 @@
 const { readFile, writeFile } = require('fs/promises');
 const inquirer = require("inquirer");
-const { Shapes, Triangle, Rectangle } = require('./lib/shapes.js');
+const { Shapes, Circle, Square, Rectangle, Triangle } = require('./lib/shapes.js');
 
 const validateInitials = async (input) => {
     if (input.length > 3) {
@@ -57,10 +57,14 @@ function generateSVG(s_color, shapeSelected, t_color, initials) {
 
     switch (shapeSelected) {
         case "Circles":
-
+            svgPaths = new Circle(s_color).renderSVG_Circle();
+            t_Size = 72;
+            t_Height = 115;
             break;
         case "Squares":
-
+            svgPaths = new Square(s_color).renderSVG_Squares();
+            t_Size = 100;
+            t_Height = 130;
             break;
         case "Rectangles":
             svgPaths = new Rectangle(s_color).renderSVG_Rectangle();
@@ -78,12 +82,9 @@ function generateSVG(s_color, shapeSelected, t_color, initials) {
             t_Height = 140;
     }
 
-
-
-
     const finalsvg = `<svg ${svgHeader}>
    ${svgPaths}
-   <text x="150" y="125" font-size="${t_Size}" text-anchor="middle" fill="${t_color}">${initials.toUpperCase()}</text></svg>`
+   <text x="150" y="${t_Height}" font-size="${t_Size}" text-anchor="middle" fill="${t_color}">${initials.toUpperCase()}</text></svg>`
 
     return finalsvg;
 }
