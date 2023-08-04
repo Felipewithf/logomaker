@@ -21,7 +21,7 @@ describe("Shapes", ()=>{
     describe('circles', ()=>{
         it('make circles shapes with the color from user', ()=>{
             const shape = new Circle("blue").renderSVG_Circle();
-            expect(shape).toEqual(`<g id="Group_1" data-name="Group 1" transform="translate(70 10))" fill="blue">
+            expect(shape).toEqual(`<g id="Group_1" data-name="Group 1" transform="translate(70 10)" fill="blue">
         <circle id="Ellipse_1" data-name="Ellipse 1" cx="78" cy="78" r="78" transform="translate(0.764 4.101)"/>
         <path id="Path_1" data-name="Path 1" d="M17,4.26V24.713A58.626,58.626,0,0,1,56.145,80.006,58.626,58.626,0,0,1,17,135.3v20.453A78.234,78.234,0,0,0,75.718,80.006,78.234,78.234,0,0,0,17,4.26Z" transform="translate(140.732 2.219)"/>
         <path id="Path_2" data-name="Path 2" d="M17,4.26V24.713A58.626,58.626,0,0,1,56.145,80.006,58.626,58.626,0,0,1,17,135.3v20.453A78.234,78.234,0,0,0,75.718,80.006,78.234,78.234,0,0,0,17,4.26Z" transform="translate(16.797 162.23) rotate(180)"/>

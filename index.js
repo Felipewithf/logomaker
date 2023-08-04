@@ -39,7 +39,7 @@ inquirer
 
         const svgdata = generateSVG(res.shapesColor, res.shapes, res.color, res.abc);
 
-        writeFile("./examples/logo.svg", svgdata)
+        writeFile(`./examples/logo.svg`, svgdata)
             .then(() => {
                 console.log('Success svg logo created');
             });
