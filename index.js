@@ -42,7 +42,7 @@ inquirer
         writeFile("./examples/logo.svg", svgdata)
             .then(() => {
                 console.log('Success svg logo created');
-            })
+            });
 
     });
 
@@ -88,3 +88,6 @@ function generateSVG(s_color, shapeSelected, t_color, initials) {
 
     return finalsvg;
 }
+
+
+module.exports = validateInitials;
